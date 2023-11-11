@@ -8,7 +8,7 @@ def separate_products(data):
     for i in range(len(data)):
         row = data[i]
 
-        product = row['PRODUCTO']
+        product = row['CODIGO']
 
         if not product in products:
             products[product] = [row]
