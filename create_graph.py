@@ -10,6 +10,7 @@ def generate_graph(names, values, product):
     plt.savefig("./prices/{}.png".format(product))
 
 def week_graph(data, year, name):
+    plt.clf()
     weeks = [0]*50
 
     for row in data:
@@ -26,6 +27,7 @@ def week_graph(data, year, name):
 
 
 def prices_graph(data, year, name):
+    plt.clf()
     months = [0]*(200)
     months_cnt = [0]*(200)
 
