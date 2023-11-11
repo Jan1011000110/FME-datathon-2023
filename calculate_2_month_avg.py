@@ -22,10 +22,10 @@ def calculate_T_month_avg(T):
         cnt_rs = []
         for i in range(9):
             rs.append([])
-            rcnt_s.append([])
+            cnt_rs.append([])
             for j in range(12//T):
                 rs[i].append(0)
-                cnt_s[i].append(0)
+                cnt_rs[i].append(0)
         
         for row in pdata:
             tm = row['FECHAPEDIDO']
@@ -36,9 +36,12 @@ def calculate_T_month_avg(T):
         
         for i in range(9):
             for j in range(12//T):
-                rs[i][j] /= cnt_rs[i][j]
+                if cnt_rs[i][j] != 0:
+                    rs[i][j] /= cnt_rs[i][j]
         
         avg_T_month[product] = rs
+    
+    return avg_T_month
 
 
-calculate_T_month_avg()
+#print(calculate_T_month_avg(2))
