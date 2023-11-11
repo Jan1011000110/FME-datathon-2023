@@ -15,3 +15,25 @@ def week_graph(data, year, name):
     plt.xticks(range(1, len(weeks)))
 
     plt.savefig(name)
+
+
+def prices_graph(data, year, name):
+    months = [0]*(200)
+    months_cnt = [0]*(200)
+
+    for row in data:
+        date = row['FECHAPEDIDO']
+        num = date.split('/')
+        num = [int(x) for x in num]
+        months[1+(num[1]-1) + (num[2]-15)*12] += int(row['IMPORTELINEA'])/int(row['CANTIDADCOMPRA'])
+        months_cnt[1+(num[1]-1) + (num[2]-15)*12] += 1
+    
+    for i in range(len(months)):
+        if months_cnt[i] != 0:
+            months[i] = months[i] / months_cnt[i]
+
+    plt.bar(range(len(months)), months)
+    plt.title(f'Gráfico de 20')
+    plt.xticks(range(1, len(months)))
+    plt.savefig(name)
+    plt.clear()
