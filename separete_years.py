@@ -7,7 +7,7 @@ def separete_years(data):
         row = data[i]
         date = row['FECHAPEDIDO']
         year = date[-2:]
-        print(year)
+        
         if not year in years:
             years[year] = [row]
         else:
