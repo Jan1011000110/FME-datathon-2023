@@ -1,5 +1,13 @@
 import matplotlib.pyplot as plt
 import pandas as pd
+import numpy as np
+
+
+def generate_graph(names, values, product):
+    plt.clf()
+    plt.plot(np.array(names), np.array(values))
+    plt.show(block=True)
+    plt.savefig("./prices/{}.png".format(product))
 
 def week_graph(data, year, name):
     weeks = [0]*50
