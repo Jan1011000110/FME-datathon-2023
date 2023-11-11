@@ -78,4 +78,4 @@ def get_predicted_price_of_products():
     return predicted_price_by_product
 
 
-get_predicted_price_of_products()
+#get_predicted_price_of_products()

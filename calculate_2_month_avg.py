@@ -41,4 +41,4 @@ def calculate_T_month_avg(T):
         avg_T_month[product] = rs
 
 
-calculate_T_month_avg()
+#calculate_T_month_avg()
