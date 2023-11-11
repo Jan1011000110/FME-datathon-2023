@@ -13,4 +13,5 @@ def separate_hospitals(data):
         else:
             hospitals[hospital].append(row)
 
+    return hospitals
 
