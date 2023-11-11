@@ -68,10 +68,7 @@ def get_predicted_price_of_products():
         # Predicted
         predicted_price = predict_price(product, years)
 
-        if not product in predicted_price_by_product:
-            predicted_price_by_product[product] = [predicted_price]
-        else:
-            predicted_price_by_product[product].append(predicted_price)
+        predicted_price_by_product[product] = predicted_price
     
     return predicted_price_by_product
 
