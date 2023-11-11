@@ -1,7 +1,7 @@
 from read_data import read_data
 from separate_products import separate_products
 from separete_years import separete_years
-from create_graph import generate_graph
+#   from create_graph import generate_graph
 
 def get_predicted_price_of_products():
 
@@ -32,18 +32,16 @@ def get_predicted_price_of_products():
             average1 = average_price_by_year[i]
             average2 = average_price_by_year[i+1]
 
-            if (i == len(average_price_by_year)-2):
-                coef *= 2
             predicted_price += coef*(average1-average2)
             coef *= 1/2
 
-        average_price_by_year.reverse()
-        average_price_by_year.append(predicted_price)
-        keys.reverse()
-        keys.append("24")
-        print(keys)
-        print(average_price_by_year)
-        generate_graph(keys, average_price_by_year, product)
+        #average_price_by_year.reverse()
+        #average_price_by_year.append(predicted_price)
+        #keys.reverse()
+        #keys.append("24")
+        #print(keys)
+        #print(average_price_by_year)
+        #generate_graph(keys, average_price_by_year, product)
 
         return predicted_price
 
