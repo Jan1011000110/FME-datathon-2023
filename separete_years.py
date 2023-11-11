@@ -12,5 +12,5 @@ def separete_years(data):
             years[year] = [row]
         else:
             years[year].append(row)
-
+    
     return years
