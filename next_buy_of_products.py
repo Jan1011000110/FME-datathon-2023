@@ -17,7 +17,10 @@ def get_predicted_buy_of_products(data):
             buy1 = buys_by_year[i]
             buy2 = buys_by_year[i+1]
 
-            predicted_buy += coef*(buy1-buy2)
+            if (buy1 == 0 or buy2 == 0):
+                continue
+
+            predicted_buy *= (buy1/buy2)**coef
             coef *= 1/2
         
         return predicted_buy

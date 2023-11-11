@@ -32,7 +32,10 @@ def get_predicted_price_of_products():
             average1 = average_price_by_year[i]
             average2 = average_price_by_year[i+1]
 
-            predicted_price += coef*(average1-average2)
+            if average1 == 0 or average2 == 0:
+                continue
+
+            predicted_price *= (average1/average2)**coef
             coef *= 1/2
 
         #average_price_by_year.reverse()
