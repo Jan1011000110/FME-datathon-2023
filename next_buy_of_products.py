@@ -8,6 +8,8 @@ def get_predicted_buy_of_products(data):
         for lst_buy in years:
             buys_by_year.append(lst_buy[buy])
         
+        buys_by_year.reverse()
+        
         predicted_buy = buys_by_year[0]
         coef = 1/2
 
