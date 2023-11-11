@@ -6,6 +6,7 @@ data = read_data()
 
 hospitals = {}
 
-for row in data:
+for i in range(len(data)):
+    row = data.iloc(i)
     print(row)
     break
