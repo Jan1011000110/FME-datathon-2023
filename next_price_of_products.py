@@ -1,7 +1,7 @@
 from read_data import read_data
 from separate_products import separate_products
 from separete_years import separete_years
-from create_graph import generate_graph
+#   from create_graph import generate_graph
 
 def get_predicted_price_of_products():
 
