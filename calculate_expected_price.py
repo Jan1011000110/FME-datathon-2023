@@ -14,7 +14,7 @@ for product in group_amounts:
 total_price = 0
 product_prices = {}
 
-print(T_avg['E67462'])
+#print(T_avg['E67462'])
 
 print(total_amounts)
 print(prices)
