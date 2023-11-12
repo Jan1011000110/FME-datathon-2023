@@ -25,15 +25,24 @@ def get_predicted_price_of_products():
             average = total_price/total_units
             average_price_by_year.append(average)
 
-        predicted_price = average_price_by_year[0]
-        coef = 1/2
+        predicted_price = 1
+        coef = 1
+        suma_coef = 0.0
 
         for i in range(len(average_price_by_year)-1):
             average1 = average_price_by_year[i]
             average2 = average_price_by_year[i+1]
 
-            predicted_price += coef*(average1-average2)
-            coef *= 1/2
+            suma_coef += coef
+
+            if average1 == 0 or average2 == 0:
+                continue
+
+            predicted_price *= (average1/average2)**coef
+            coef *= 0.9
+        
+        predicted_price = predicted_price ** (1/suma_coef)
+        predicted_price *= average_price_by_year[0]
 
         #average_price_by_year.reverse()
         #average_price_by_year.append(predicted_price)
@@ -42,7 +51,8 @@ def get_predicted_price_of_products():
         #print(keys)
         #print(average_price_by_year)
         #generate_graph(keys, average_price_by_year, product)
-
+        
+        #return average_price_by_year[0]
         return predicted_price
 
     # Read data

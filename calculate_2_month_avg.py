@@ -34,10 +34,10 @@ def calculate_T_month_avg(T):
             rs[year][month//T] += row['CANTIDADCOMPRA']
             cnt_rs[year][month//T] += 1
         
-        for i in range(9):
-            for j in range(12//T):
-                if cnt_rs[i][j] != 0:
-                    rs[i][j] /= cnt_rs[i][j]
+        #for i in range(9):
+        #    for j in range(12//T):
+        #        if cnt_rs[i][j] != 0:
+        #            rs[i][j] /= cnt_rs[i][j]
         
         avg_T_month[product] = rs
     
