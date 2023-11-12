@@ -21,7 +21,7 @@ def get_predicted_price_of_products():
                 row = data[i]
                 total_price += row['PRECIO']
                 total_units += row['UNIDADESCONSUMOCONTENIDAS']
-                
+
             average = total_price/total_units
             average_price_by_year.append(average)
 
@@ -45,7 +45,6 @@ def get_predicted_price_of_products():
 
         return predicted_price
 
-        
     # Read data
     data = read_data()
 
